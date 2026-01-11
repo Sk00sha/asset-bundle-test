@@ -1,11 +1,14 @@
+bundle:
+  name: demo-job-bundle
+
 resources:
   jobs:
-    random_job:
-      name: random-free-edition-job
+    demo_job:
+      name: demo-asset-bundle-job
       tasks:
-        - task_key: generate_data
+        - task_key: run_script
           new_cluster:
-            spark_version: "14.3.x-scala2.12"
+            spark_version: 13.3.x-scala2.12
             node_type_id: Standard_DS3_v2
             num_workers: 1
           spark_python_task:
