@@ -2,7 +2,7 @@ bundle:
   name: databricks-free-job-bundle
 
 include:
-  - job.yml
+  - resources/job.yml
 
 targets:
   dev:
