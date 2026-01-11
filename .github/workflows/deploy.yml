@@ -1,0 +1,25 @@
+name: Deploy Databricks Bundle (Free Edition)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Databricks CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+
+      - name: Deploy bundle
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_WORKSPACE }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_PAT }}
+        run: |
+          databricks bundle deploy --target dev

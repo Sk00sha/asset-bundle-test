@@ -1,0 +1,7 @@
+bundle:
+  name: databricks-free-job-bundle
+
+targets:
+  dev:
+    workspace:
+      host: ${{ secrets.DATABRICKS_WORKSPACE }}

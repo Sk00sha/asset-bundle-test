@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    random_job:
+      name: random-free-edition-job
+      tasks:
+        - task_key: generate_data
+          new_cluster:
+            spark_version: "14.3.x-scala2.12"
+            node_type_id: Standard_DS3_v2
+            num_workers: 1
+          spark_python_task:
+            python_file: src/job.py
