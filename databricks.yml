@@ -4,4 +4,4 @@ bundle:
 targets:
   dev:
     workspace:
-      host: ${DATABRICKS_WORKSPACE}
+      host: https://dbc-17f8327d-3540.cloud.databricks.com/
