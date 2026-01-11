@@ -7,9 +7,7 @@ resources:
       name: demo-asset-bundle-job
       tasks:
         - task_key: run_script
-          new_cluster:
-            spark_version: 13.3.x-scala2.12
-            node_type_id: Standard_DS3_v2
-            num_workers: 1
           spark_python_task:
             python_file: ../src/job.py
+          compute:
+            type: serverless
