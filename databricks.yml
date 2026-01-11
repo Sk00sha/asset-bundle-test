@@ -1,7 +1,10 @@
 bundle:
   name: databricks-free-job-bundle
 
+include:
+  - job.yml
+
 targets:
   dev:
     workspace:
-      host: https://dbc-17f8327d-3540.cloud.databricks.com/
+      host: https://dbc-17f8327d-3540.cloud.databricks.com
